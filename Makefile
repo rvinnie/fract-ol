@@ -1,12 +1,13 @@
 CC = gcc
 
-CFLAGS = 
+# CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 
 LFLAGS = -lXext -lX11 -lm -lz
 
 LIBMLX = libmlx/libmlx_Linux.a
 
-HEADER = philosophers.h
+HEADER = fractol.h
 
 NAME = fractol
 
@@ -17,13 +18,13 @@ SRCS := $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(LIBMLX) $(LFLAGS) -o $(NAME)
+	$(CC) $(OBJS) -fsanitize=address $(LIBMLX) $(LFLAGS) -o $(NAME)
 
 # $(NAME): $(OBJS)
 # 	$(CC)  $^ -o $@
 #  -fsanitize=address
 %.o: %.c $(HEADER)
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c -g $(CFLAGS) $< -o $@
 
 clean:
 	$(RM) $(OBJS)
