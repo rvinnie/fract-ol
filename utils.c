@@ -1,5 +1,17 @@
 #include "fractol.h"
 
+unsigned int	take_color(t_info s_info, int n)
+{
+	unsigned int	color;
+
+	color = n * 2 % 255;
+	// if (n > 50)
+	// 	color = COLOR_RED + n * 10;
+	if (n == s_info.max_iter)
+		color = COLOR_BLACK;
+	return (color);
+}
+
 int	cmp_arg(char *arg)
 {
 	int i;
