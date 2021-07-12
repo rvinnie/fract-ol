@@ -21,17 +21,24 @@ void	my_pxl_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void clear_image(t_info *s_info)
+void	print_list(void)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < s_info->h)
-	{
-		j = 0;
-		while (j < s_info->w)
-			my_pxl_put(&s_info->img, j++, i, COLOR_BLACK);
-		i++;
-	}
+	printf("List of available parameters:\n");
+	printf("1 - Julia Set\n2 - Mandelbrot Set\n");
+	exit(0);
 }
+
+// void clear_image(t_info *s_info)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	while (i < s_info->h)
+// 	{
+// 		j = 0;
+// 		while (j < s_info->w)
+// 			my_pxl_put(&s_info->img, j++, i, COLOR_BLACK);
+// 		i++;
+// 	}
+// }
