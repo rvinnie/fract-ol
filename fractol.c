@@ -1,6 +1,6 @@
 #include "fractol.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_info	s_info;
 	int		kind;
@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	s_info.kind = kind;
 	s_info.w = WIDTH;
 	s_info.h = HEIGHT;
+	s_info.color = 1;
 	s_info.max_iter = MAX_ITER;
 	main_drawer(&s_info);
 	return (0);

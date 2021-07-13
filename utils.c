@@ -1,20 +1,48 @@
 #include "fractol.h"
 
+double	change_range(double range)
+{
+	double	ret;
+
+	ret = range * .2;
+	return (ret);
+}
+
+unsigned int	rgb(int r, int g, int b)
+{
+	unsigned int	ans;
+
+	ans = (r) % 255 * 256 * 256 + (g) % 255 * 256 + (b) % 255;
+	return (ans);
+}
+
 unsigned int	take_color(t_info s_info, int n)
 {
 	unsigned int	color;
 
-	color = n * 2 % 255;
-	// if (n > 50)
-	// 	color = COLOR_RED + n * 10;
+	if (s_info.color == 1)
+		color = rgb(n * 2, 255, 255);
+	else if (s_info.color == 2)
+		color = rgb(255, n * 2, 255);
+	else if (s_info.color == 3)
+		color = rgb(255, 255, n * 2);
+	else if (s_info.color == 4)
+		color = rgb(n * 2, 0, n * 2);
+	else if (s_info.color == 5)
+		color = rgb(n * 2, n, n + 30);
 	if (n == s_info.max_iter)
-		color = COLOR_BLACK;
+	{
+		if (s_info.color == 5)
+			color = COLOR_WHITE;
+		else
+			color = COLOR_BLACK;
+	}
 	return (color);
 }
 
 int	cmp_arg(char *arg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (arg[i] == '1' && !arg[i + 1])
@@ -25,32 +53,9 @@ int	cmp_arg(char *arg)
 		return (-1);
 }
 
-void	my_pxl_put(t_data *data, int x, int y, int color)
-{
-	char *dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
-}
-
 void	print_list(void)
 {
 	printf("List of available parameters:\n");
 	printf("1 - Julia Set\n2 - Mandelbrot Set\n");
 	exit(0);
 }
-
-// void clear_image(t_info *s_info)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < s_info->h)
-// 	{
-// 		j = 0;
-// 		while (j < s_info->w)
-// 			my_pxl_put(&s_info->img, j++, i, COLOR_BLACK);
-// 		i++;
-// 	}
-// }

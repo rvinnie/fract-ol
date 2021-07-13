@@ -1,5 +1,13 @@
 #include "fractol.h"
 
+void	my_pxl_put(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}
+
 void	set_info(t_info *s_info, t_set *s_set, int x, int y)
 {
 	double	x_diff;
@@ -64,8 +72,8 @@ void	sets_drawer(t_info *s_info)
 	s_info->s_set.ver_diff = 0;
 	if (s_info->kind == 1)
 	{
-		s_info->s_set.jul_real = JUL_R_THIRD;
-		s_info->s_set.jul_img = JUL_I_THIRD;
+		s_info->s_set.jul_real = JUL_REAL_3;
+		s_info->s_set.jul_img = JUL_IMG_3;
 	}
 	draw_set(s_info);
 	mlx_put_image_to_window(s_info->mlx, s_info->win, s_info->img.img, 0, 0);
