@@ -11,7 +11,7 @@
 # define MANDELBROT "Mandelbrot set"
 # define WIDTH 800
 # define HEIGHT 600
-# define MAX_ITER 500
+# define MAX_ITER 200
 
 # define COLOR_BLACK 0x00000000
 # define COLOR_WHITE 0x00FFFFFF

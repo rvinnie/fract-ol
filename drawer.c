@@ -11,6 +11,13 @@ void	check_keys(int keycode, t_info *s_info)
 	}
 }
 
+// int	mouse_wheel(int keycode, t_info *s_info)
+// {
+// 	printf("%d\n", keycode);
+// 	s_info->kind = 1;
+// 	return (0);
+// }
+
 void	julia_handler(int keycode, t_info *s_info)
 {
 	check_keys(keycode, s_info);
@@ -34,6 +41,8 @@ void	julia_handler(int keycode, t_info *s_info)
 		s_info->s_set.jul_real = JUL_REAL_4;
 		s_info->s_set.jul_img = JUL_IMG_4;
 	}
+	else
+		return ;
 	draw_set(s_info);
 	mlx_put_image_to_window(s_info->mlx, s_info->win, s_info->img.img, 0, 0);
 }
@@ -83,6 +92,7 @@ int	main_drawer(t_info *s_info)
 	sets_drawer(s_info);
 	mlx_hook(s_info->win, 2, 1L << 0, click_handler, s_info);
 	mlx_hook(s_info->win, 17, 1L << 0, valid_exit, s_info);
+	// mlx_hook(s_info->win, 2, 1L << 9, mouse_wheel, s_info);
 	mlx_loop(s_info->mlx);
 	return (0);
 }

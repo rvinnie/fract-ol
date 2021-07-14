@@ -72,8 +72,8 @@ void	sets_drawer(t_info *s_info)
 	s_info->s_set.ver_diff = 0;
 	if (s_info->kind == 1)
 	{
-		s_info->s_set.jul_real = JUL_REAL_3;
-		s_info->s_set.jul_img = JUL_IMG_3;
+		s_info->s_set.jul_real = JUL_REAL_1;
+		s_info->s_set.jul_img = JUL_IMG_1;
 	}
 	draw_set(s_info);
 	mlx_put_image_to_window(s_info->mlx, s_info->win, s_info->img.img, 0, 0);
