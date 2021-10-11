@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_set.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvinnie <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/02 16:33:07 by rvinnie           #+#    #+#             */
+/*   Updated: 2021/08/02 16:33:08 by rvinnie          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	my_pxl_put(t_data *data, int x, int y, int color)
@@ -21,7 +33,7 @@ void	set_info(t_info *s_info, t_set *s_set, int x, int y)
 	s_set->start_b = s_set->b;
 }
 
-void 	put_set_pxls(t_info *s_info, t_set *s_set, int x, int y)
+void	put_set_pxls(t_info *s_info, t_set *s_set, int x, int y)
 {
 	int				n;
 

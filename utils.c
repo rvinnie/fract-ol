@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvinnie <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/02 16:35:10 by rvinnie           #+#    #+#             */
+/*   Updated: 2021/08/02 16:35:12 by rvinnie          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 double	change_range(double range)
@@ -55,7 +67,11 @@ int	cmp_arg(char *arg)
 
 void	print_list(void)
 {
-	printf("List of available parameters:\n");
-	printf("1 - Julia Set\n2 - Mandelbrot Set\n");
+	printf(ANSI_COLOR_CYAN);
+	printf("------------------------------");
+	printf("\n List of available parameters\n");
+	printf(" 1 - Julia Set\n 2 - Mandelbrot Set\n");
+	printf("------------------------------\n");
+	printf(ANSI_COLOR_RESET);
 	exit(0);
 }

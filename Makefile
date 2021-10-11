@@ -1,11 +1,8 @@
 CC = gcc
 
-# CFLAGS = 
 CFLAGS = -Wall -Wextra -Werror
 
-LFLAGS = -lXext -lX11 -lm -lz
-
-LIBMLX = libmlx/libmlx_Linux.a
+LFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit -O3
 
 HEADER = fractol.h
 
@@ -13,18 +10,18 @@ NAME = fractol
 
 RM = rm -f
 
-SRCS := $(wildcard *.c)
+SRCS =	./fractol.c \
+		./drawer.c \
+		./draw_set.c \
+		./utils.c
 
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -fsanitize=address $(LIBMLX) $(LFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $(NAME)
 
-# $(NAME): $(OBJS)
-# 	$(CC)  $^ -o $@
-#  -fsanitize=address
-%.o: %.c $(HEADER)
-	$(CC) -c -g $(CFLAGS) $< -o $@
+%.o: %.c $(HEADER) Makefile
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	$(RM) $(OBJS)

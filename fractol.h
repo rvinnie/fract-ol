@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvinnie <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/02 16:34:27 by rvinnie           #+#    #+#             */
+/*   Updated: 2021/08/02 16:34:28 by rvinnie          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# include "mlx.h"
+# include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -9,23 +21,28 @@
 
 # define JULIA "Julia set"
 # define MANDELBROT "Mandelbrot set"
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 1000
+# define HEIGHT 800
 # define MAX_ITER 200
 
 # define COLOR_BLACK 0x00000000
 # define COLOR_WHITE 0x00FFFFFF
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN "\x1b[36m"
+# define ANSI_COLOR_RESET "\x1b[0m"
 
-# define KEY_UP 65362
-# define KEY_DOWN 65364
-# define KEY_LEFT 65361
-# define KEY_RIGHT 65363
-# define KEY_ESC 65307
-# define KEY_SHIFT 65505
-# define KEY_1 49
-# define KEY_2 50
-# define KEY_3 51
-# define KEY_4 52
+# define ZOOM_IN 5
+# define ZOOM_OUT 4
+# define KEY_UP 13
+# define KEY_DOWN 1
+# define KEY_LEFT 0
+# define KEY_RIGHT 2
+# define KEY_ESC 53
+# define KEY_SHIFT 257
+# define KEY_1 18
+# define KEY_2 19
+# define KEY_3 20
+# define KEY_4 21
 
 # define JUL_REAL_1 -0.70176
 # define JUL_IMG_1 -0.3842
