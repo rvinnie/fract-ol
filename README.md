@@ -1,4 +1,4 @@
-# fract-ol (work only on macOS)
+# fractal (work only on macOS)
  Displays the famous fractals of Julia and Mandelbrot
 ## How to use?
 1) `make`
