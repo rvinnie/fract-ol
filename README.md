@@ -1,6 +1,6 @@
-# fractal (work only on macOS)
+# fractal
  Displays the famous fractals of Julia and Mandelbrot
-## How to use?
+## How to use? (work only on macOS)
 1) `make`
 2) `./fractol number_of_parameter`  
  
