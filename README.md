@@ -16,6 +16,6 @@ Exit program - `esc`
 Buttons `1 2 3 4` - to change shape
 
 ## Examples
-![alt text](https://github.com/rvinnie/fractal/blob/master/raw/julia2.jpg "Julia 1")
+![alt text](https://github.com/rvinnie/fractal/blob/master/raw/julia1.jpg "Julia 1")
 ![alt text](https://github.com/rvinnie/fractal/blob/master/raw/mandelbrot.jpg "Mandelbrot")
 ![alt text](https://github.com/rvinnie/fractal/blob/master/raw/julia2.jpg "Julia 2")
