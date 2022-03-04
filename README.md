@@ -2,10 +2,10 @@
  Displays the famous fractals of Julia and Mandelbrot
 ## How to use? (work only on macOS)
 1) `make`
-2) `./fractol <parameter>`  
- 
-   1 - Julia Set  
-   2 - Mandelbrot Set  
+2) `./fractol <parameter>`   
+parameter:  
+   1 - for Julia Set  
+   2 - for Mandelbrot Set  
 
 ## Control
 Movement - `W A S D`  
