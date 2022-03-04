@@ -1,6 +1,8 @@
 # fractal
+
  Displays the famous fractals of Julia and Mandelbrot
-## How to use? (work only on macOS)
+## How to use?
+![platform](https://img.shields.io/badge/platform-macOS-brightgreen--brightgreen)   
 1) `make`
 2) `./fractol <parameter>`   
 parameter:  
